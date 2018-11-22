@@ -1,5 +1,5 @@
 import React from 'react'
-const pika = './images/pika.jpg'
+const pika = './images/pika.png'
 
 export default function Logo () {
   return (
