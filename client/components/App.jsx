@@ -5,14 +5,14 @@ import AddButton from './AddButton'
 
 export default class App extends Component {
   state = {
-    task = {
+    task = [{
       id: 1,
       task: 'Drink a bottle of beer'
     },
     {
       id: 2,
       task: 'Get the BBQ roaring'
-    }
+    }]
   }
   render () {
     return (
