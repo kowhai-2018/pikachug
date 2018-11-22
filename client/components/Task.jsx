@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Task () {
+export default function Task (props) {
   return (
     <div>
-      <h1>This will be a task</h1>
+      <ul>{props.task}</ul>
     </div>
   )
 }
