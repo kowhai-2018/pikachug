@@ -5,7 +5,7 @@ import AddButton from './AddButton'
 
 export default class App extends Component {
   state = {
-    task: [{
+    tasks: [{
       id: 1,
       task: 'Drink a bottle of beer'
     },
@@ -20,7 +20,11 @@ export default class App extends Component {
   }
 
   addNewTask = task => {
-    taskId = this.state.task.length
+    task.id = this.state.tasks.length+1
+    let tasks = [...this.state.tasks, task]
+    this.setState({
+      tasks: tasks
+    })
 
   }
 
@@ -29,8 +33,8 @@ export default class App extends Component {
     return (
       <div>
         <Logo />
-        <TaskList taskList={this.state.task}/>
-        <AddButton />
+        <TaskList taskList={this.state.tasks}/>
+        <AddButton add={this.addNewTask} />
       </div>
     )
   }

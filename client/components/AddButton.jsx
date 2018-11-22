@@ -6,7 +6,7 @@ export default class AddButton extends Component {
     return (
       <div>
         <h1>This will be the add button</h1>
-        <AddForm />
+        <AddForm add={this.props.add}/>
       </div>
     )
   }
