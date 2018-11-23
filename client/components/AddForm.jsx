@@ -18,6 +18,7 @@ export default class AddForm extends Component {
       task: ''
     })
   }
+
   render () {
     return (
       <div>
