@@ -3,7 +3,7 @@ import Task from './Task'
 
 export default function TaskList (props) {
   return (
-    <div className="row">
+    <div className="row list">
       {props.taskList.map(task =>
         (<Task id={task.id} task={task.task} key={task.id} removeTask={props.removeTask} confirmTask={props.confirmTask} checked={props.checked} />)
       )}
