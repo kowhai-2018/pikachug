@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 export default class AddForm extends Component {
   state = {
     id: '',
-    task: ''
+    task: '',
+    checked: false
   }
 
   changeHandler = e => {
@@ -15,7 +16,8 @@ export default class AddForm extends Component {
     this.props.add(this.state)
     this.setState({
       id: '',
-      task: ''
+      task: '',
+      checked: false
     })
   }
 
