@@ -1,11 +1,12 @@
 import React from 'react'
 import Task from './Task'
 
-export default function TaskList () {
+export default function TaskList (props) {
   return (
-    <div>
-      <Task />
-      <Task />
+    <div className="row list">
+      {props.taskList.map(task =>
+        (<Task id={task.id} task={task.task} key={task.id} removeTask={props.removeTask} confirmTask={props.confirmTask} checked={props.checked} />)
+      )}
     </div>
   )
 }

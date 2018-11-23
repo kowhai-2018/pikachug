@@ -4,8 +4,8 @@ const pika = './images/pika.png'
 export default function Logo () {
   return (
     <div>
-      <h1>PIKACHUG</h1>
-      <img src={pika} />
+      <img src='https://fontmeme.com/permalink/181123/3d7d5ca6b97dfd9bbbec6107ccd4da2d.png' />
+      <img width='200' src={pika} />
     </div>
   )
 }
