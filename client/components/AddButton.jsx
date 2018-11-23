@@ -8,10 +8,12 @@ export default class AddButton extends Component {
       <div>
         <Modal
           header='Modal Header'
-          trigger={<Button waves='light'>Add a Task</Button>}>
+          trigger={<a className='box' ></a>}>
           <AddForm add={this.props.add} />
         </Modal>
       </div>
     )
   }
 }
+
+// floating large
