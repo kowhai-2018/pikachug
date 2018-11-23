@@ -25,15 +25,21 @@ export default class App extends Component {
     this.setState({
       tasks: tasks
     })
-
   }
 
+  removeTask = id => {
+    const tasks = [...this.state.tasks]
+    const newState = tasks.filter(task => task.id !== id)    
+    this.setState({ 
+      tasks: newState 
+    })
+  }
 
   render () {
     return (
       <div>
         <Logo />
-        <TaskList taskList={this.state.tasks}/>
+        <TaskList taskList={this.state.tasks} removeTask={this.removeTask} />
         <AddButton add={this.addNewTask} />
       </div>
     )
