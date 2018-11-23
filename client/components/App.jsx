@@ -7,15 +7,18 @@ export default class App extends Component {
   state = {
     tasks: [{
       id: 1,
-      task: 'Drink a bottle of beer'
+      task: 'Drink a bottle of beer',
+      checked: false
     },
     {
       id: 2,
-      task: 'Get the BBQ roaring'
+      task: 'Get the BBQ roaring',
+      checked: false
     },
     {
       id: 3,
-      task: 'Go to the pub!'
+      task: 'Go to the pub!',
+      checked: false
     }]
   }
 
@@ -35,12 +38,30 @@ export default class App extends Component {
     })
   }
 
+  confirmTask (state) {
+    // const tasks = [...this.state.tasks]
+    // const newState = tasks.find(task => task.id === state.id)
+
+    this.setState(prevState => {
+      const tasks = [...prevState.tasks]
+      const taskIndex = tasks.findIndex(task => task.id === state.id)
+
+      tasks[taskIndex] = { ...tasks[taskIndex], ...state }
+
+      return { tasks }
+    })
+    console.log(this.state)
+  }
+
+
   render () {
     return (
-      <div>
-        <Logo />
-        <TaskList taskList={this.state.tasks} removeTask={this.removeTask} />
+      <div className="container">
+      <center>
+      <Logo />
+        <TaskList confirmTask={this.confirmTask} taskList={this.state.tasks} removeTask={this.removeTask} checked={this.state.checked} />
         <AddButton add={this.addNewTask} />
+      </center>
       </div>
     )
   }
